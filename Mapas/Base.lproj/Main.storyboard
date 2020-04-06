@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Aqt-3Y-L8d">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Mapas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="B7k-wQ-wAO">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="B7k-wQ-wAO" secondAttribute="bottom" id="Goq-p0-IQk"/>
+                            <constraint firstItem="B7k-wQ-wAO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IAQ-vK-ZPu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B7k-wQ-wAO" secondAttribute="trailing" id="LLz-CJ-F39"/>
+                            <constraint firstItem="B7k-wQ-wAO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bmC-8w-ZUu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4eG-Xx-VTz">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="QE8-oi-jsv">
+                            <rect key="frame" x="141.5" y="5.5" width="131" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Mapa"/>
+                                <segment title="Satélite"/>
+                            </segments>
+                            <connections>
+                                <action selector="seleccion:" destination="BYZ-38-t0r" eventType="valueChanged" id="Kyw-Hm-RbK"/>
+                            </connections>
+                        </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" title="Pin" id="D74-LE-6iH">
+                            <connections>
+                                <action selector="addAnotacion:" destination="BYZ-38-t0r" id="p3b-d9-pi6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="B7k-wQ-wAO" id="Cag-VY-aRu"/>
+                        <segue destination="a3Y-af-5SY" kind="show" identifier="DetalleImagen" id="Yg9-DS-S8W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="129.91071428571428"/>
+        </scene>
+        <!--Mi Image View Controller-->
+        <scene sceneID="p5v-Oq-rqC">
+            <objects>
+                <viewController id="a3Y-af-5SY" customClass="MiImageViewController" customModule="Mapas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fO4-c2-hGK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YLe-V0-cv2">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="YLe-V0-cv2" firstAttribute="leading" secondItem="lJA-6z-U7K" secondAttribute="leading" id="2sM-EF-ypE"/>
+                            <constraint firstItem="YLe-V0-cv2" firstAttribute="top" secondItem="lJA-6z-U7K" secondAttribute="top" id="E8t-Ri-NSn"/>
+                            <constraint firstItem="lJA-6z-U7K" firstAttribute="bottom" secondItem="YLe-V0-cv2" secondAttribute="bottom" id="GAg-hT-kla"/>
+                            <constraint firstItem="lJA-6z-U7K" firstAttribute="trailing" secondItem="YLe-V0-cv2" secondAttribute="trailing" id="Y5p-hQ-v99"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lJA-6z-U7K"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="b6h-Me-ZRh"/>
+                    <connections>
+                        <outlet property="imageView" destination="YLe-V0-cv2" id="wmL-iJ-w3S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5dD-oU-yud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1756" y="131"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZL1-sh-mUQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Aqt-3Y-L8d" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eOS-6q-FZo">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lD1-GT-fT8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y0x-V5-M2c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+</document>
